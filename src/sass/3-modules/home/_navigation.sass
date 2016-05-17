@@ -1,8 +1,10 @@
 #main-nav
   .firstLevel
     li
-      border-bottom: 2px solid
+      border-bottom: 1px solid
       position: relative
+      &:nth-child(2n+2)
+        background: darken($blue, 20%)
       &:last-child
         border-bottom: none
 
@@ -11,7 +13,8 @@
         padding: 10px
 
       .more-toggle
-        background: lighten($gris, 30%)
+        background: lighten($black, 15%)
+        color: $white
         width: 15%
         height: 100%
         position: absolute
@@ -21,10 +24,9 @@
         display: flex
         align-items: center
         justify-content: center
-        color: $white
         cursor: pointer
         &:hover
-          background: lighten($gris, 20%)
+          background: lighten($black, 20%)
         +is(active)
           .arrow
             transform: rotate(180deg)
@@ -45,6 +47,9 @@
 
     li
       border: none
+      background: white
+      &:nth-child(2n+2)
+        background: lighten($yellow, 10%)
 
       a
         margin-left: 10%
@@ -71,3 +76,9 @@
     font-size: 0.8em
     +is(active)
       display: block
+
+    li
+      border: none
+      background: white
+      &:nth-child(2n+2)
+        background: lighten($dark-blue, 20%)
