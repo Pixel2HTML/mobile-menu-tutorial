@@ -1,0 +1,830 @@
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+
+/**
+ *  Alias for edit().
+ */
+
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+
+/**
+ * Uncenter an element.
+ */
+
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+
+/**
+ * Unstack an element.
+ */
+
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+
+/**
+ * Apply a clearfix to an element.
+ */
+
+@import url('http://fonts.googleapis.com/css?family=Raleway:100,300,400,700');
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video
+{
+    font: inherit;
+    font-size: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    vertical-align: baseline;
+
+    border: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section
+{
+    display: block;
+}
+
+body
+{
+    line-height: 1;
+}
+
+ol,
+ul
+{
+    list-style: none;
+}
+
+blockquote,
+q
+{
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after
+{
+    content: '';
+    content: none;
+}
+
+table
+{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+*,
+*::before,
+*::before
+{
+    box-sizing: border-box;
+}
+
+::-moz-selection
+{
+    color: #fff;
+    background: #545f95;
+}
+
+::selection
+{
+    color: #fff;
+    background: #545f95;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+.is-hidden
+{
+    position: absolute;
+
+    visibility: hidden;
+
+    width: 0;
+    height: 0;
+}
+
+.icon
+{
+    display: block;
+
+    width: 100%;
+    margin: 0 auto;
+
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+body
+{
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.65;
+
+    color: #4a4a4a;
+}
+
+h1
+{
+    font-size: 4.21399em;
+    line-height: 1.2;
+}
+
+h2
+{
+    font-size: 3.16049em;
+    line-height: 1.3;
+}
+
+h3
+{
+    font-size: 2.37037em;
+}
+
+h4
+{
+    font-size: 1.77778em;
+}
+
+h5
+{
+    font-size: 1.33333em;
+}
+
+h6
+{
+    font-size: 1em;
+}
+
+label
+{
+    display: none;
+}
+
+.container
+{
+    position: relative;
+
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    *zoom: 1;
+}
+
+.container:before,
+.container:after
+{
+    display: table;
+
+    content: '';
+}
+
+.container:after
+{
+    clear: both;
+}
+
+.row
+{
+    *zoom: 1;
+}
+
+.row:before,
+.row:after
+{
+    display: table;
+
+    content: '';
+}
+
+.row:after
+{
+    clear: both;
+}
+
+.row--flex
+{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+            flex-direction: column;
+
+    max-width: 100%;
+
+    text-align: center;
+
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.vertical
+{
+            flex-direction: column !important;
+
+    -webkit-flex-direction: column !important;
+        -ms-flex-direction: column !important;
+}
+
+.horizontal
+{
+            flex-direction: row !important;
+
+    -webkit-flex-direction: row !important;
+        -ms-flex-direction: row !important;
+}
+
+#main-nav
+{
+    position: relative;
+    z-index: 1;
+
+    color: #fff;
+    background: #3e466e;
+
+    *zoom: 1;
+}
+
+#main-nav:before,
+#main-nav:after
+{
+    display: table;
+
+    content: '';
+}
+
+#main-nav:after
+{
+    clear: both;
+}
+
+#main-nav a
+{
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: inherit;
+}
+
+#main-nav .toggle
+{
+    float: right;
+
+    padding: .625em;
+
+    cursor: pointer;
+    text-transform: uppercase;
+
+    background: #ef6e30;
+}
+
+#main-nav .toggle span
+{
+    font-size: 1.1875em;
+    line-height: 1;
+
+    display: inline-block;
+}
+
+#main-nav .toggle .burger
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 1.5625em;
+    height: .875em;
+    margin-left: 5px;
+
+    content: '';
+}
+
+#main-nav .toggle .top,
+#main-nav .toggle .middle,
+#main-nav .toggle .bottom
+{
+    position: absolute;
+
+    width: 100%;
+    height: .125em;
+
+    content: '';
+
+    background: #fff;
+}
+
+#main-nav .toggle .top
+{
+    top: 0;
+
+    transition: .3s;
+}
+
+#main-nav .toggle .middle
+{
+    position: absolute;
+    top: 50%;
+
+    transition: .3s;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+#main-nav .toggle .bottom
+{
+    bottom: 0;
+
+    transition: .3s;
+}
+
+#main-nav .toggle.is-triggered .burger .top
+{
+    top: 6px;
+
+    width: 85%;
+
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+#main-nav .toggle.is-triggered .burger .middle
+{
+    background: transparent;
+}
+
+#main-nav .toggle.is-triggered .burger .bottom
+{
+    bottom: 6px;
+
+    width: 85%;
+
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+
+#main-nav .navigation
+{
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    display: none;
+
+    width: 80%;
+
+    color: #4a4a4a;
+    background: #fff;
+}
+
+#main-nav .navigation.is-active
+{
+    display: block;
+}
+
+#main-nav .firstLevel li
+{
+    position: relative;
+
+    border-bottom: 1px solid;
+}
+
+#main-nav .firstLevel li:nth-child(2n+2)
+{
+    background: #53bcc7;
+}
+
+#main-nav .firstLevel li:last-child
+{
+    border-bottom: none;
+}
+
+#main-nav .firstLevel li a
+{
+    display: block;
+
+    padding: 10px;
+}
+
+#main-nav .firstLevel li .more-toggle
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    width: 15%;
+    height: 100%;
+
+    cursor: pointer;
+    text-align: center;
+
+    color: #fff;
+    background: #707070;
+
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+}
+
+#main-nav .firstLevel li .more-toggle:hover
+{
+    background: #7d7d7d;
+}
+
+#main-nav .firstLevel li .more-toggle.is-active .arrow
+{
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+#main-nav .firstLevel li .arrow
+{
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+#main-nav .secondLevel
+{
+    font-size: .9em;
+
+    display: none;
+
+    width: 85%;
+}
+
+#main-nav .secondLevel.is-active
+{
+    display: block;
+}
+
+#main-nav .secondLevel li
+{
+    border: none;
+    background: white;
+}
+
+#main-nav .secondLevel li:nth-child(2n+2)
+{
+    background: #fed88c;
+}
+
+#main-nav .secondLevel li a
+{
+    margin-left: 10%;
+}
+
+#main-nav .secondLevel li .even-more-toggle
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    color: #646464;
+}
+
+#main-nav .secondLevel li .even-more-toggle .plus
+{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+#main-nav .thirdLevel
+{
+    font-size: .8em;
+
+    display: none;
+
+    width: 90%;
+    margin-left: 10%;
+}
+
+#main-nav .thirdLevel.is-active
+{
+    display: block;
+}
+
+#main-nav .thirdLevel li
+{
+    border: none;
+    background: white;
+}
+
+#main-nav .thirdLevel li:nth-child(2n+2)
+{
+    background: #6873aa;
+}
+
+header
+{
+    position: relative;
+
+    min-height: 95vh;
+    padding: 20px;
+
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url('../img/hero.jpg') no-repeat center/cover;
+}
+
+header .container
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+@media (min-width: 48em)
+{
+    .container
+    {
+        width: 85%;
+    }
+
+    .row--flex
+    {
+                flex-direction: row;
+
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+                justify-content: space-around;
+    }
+}
+
+/*# sourceMappingURL=odin.css.map */
