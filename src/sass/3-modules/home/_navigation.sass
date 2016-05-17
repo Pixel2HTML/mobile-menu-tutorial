@@ -1,0 +1,73 @@
+#main-nav
+  .firstLevel
+    li
+      border-bottom: 2px solid
+      position: relative
+      &:last-child
+        border-bottom: none
+
+      a
+        display: block
+        padding: 10px
+
+      .more-toggle
+        background: lighten($gris, 30%)
+        width: 15%
+        height: 100%
+        position: absolute
+        top: 0
+        right: 0
+        text-align: center
+        display: flex
+        align-items: center
+        justify-content: center
+        color: $white
+        cursor: pointer
+        &:hover
+          background: lighten($gris, 20%)
+        +is(active)
+          .arrow
+            transform: rotate(180deg)
+
+      .arrow
+        display: inline-block
+        margin: 0
+        width: 20px
+        height: 20px
+
+  .secondLevel
+    display: none
+    //width is 85% b/c more toggle is 15%
+    width: 85%
+    font-size: 0.9em
+    +is(active)
+      display: block
+
+    li
+      border: none
+
+      a
+        margin-left: 10%
+
+      .even-more-toggle
+        color: lighten($black, 10%)
+        display: block
+        padding: 10px
+        position: absolute
+        top: 0
+        left: 0
+        cursor: pointer
+
+        .plus
+          margin: 0
+          width: 20px
+          height: 20px
+
+
+  .thirdLevel
+    display: none
+    width: 90%
+    margin-left: 10%
+    font-size: 0.8em
+    +is(active)
+      display: block
