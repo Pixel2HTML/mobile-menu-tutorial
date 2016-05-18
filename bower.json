@@ -17,7 +17,6 @@
   ],
   "dependencies": {
     "jquery": "^2.2.2",
-    "modular-scale": "^2.1.1",
-    "jeet": "^6.1.2"
+    "modular-scale": "^2.1.1"
   }
 }

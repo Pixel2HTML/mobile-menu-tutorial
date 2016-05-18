@@ -1,7 +1,7 @@
 {
-  "name": "ground-zero",
-  "version": "2.0.0",
-  "description": "Punto de arranque para el nuevo proyecto de Don Mango Lite. Primer parada: Plaza de la Tecnología ;)",
+  "name": "mobile-menu-tutorial",
+  "version": "1",
+  "description": "a quick tutorial by pixel2html",
   "main": "gulpfile.js",
   "scripts": {
     "test": "gulp test",
@@ -24,7 +24,7 @@
     "stylus",
     "gulp"
   ],
-  "author": "Miguel Palau @mpalau",
+  "author": "Miguel Palau",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mike3run/ground-zero/issues"
